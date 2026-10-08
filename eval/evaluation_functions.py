@@ -3,6 +3,7 @@
 import json
 import re
 
+import numpy as np
 from deepeval.models import DeepEvalBaseLLM
 from langchain_core.output_parsers import StrOutputParser
 from pydantic import BaseModel
@@ -56,6 +57,15 @@ def reciprocal_rank(retrieved_ids: list[str], gold_ids: list[str]) -> float:
             return 1.0 / rank
     return 0.0
 
+
+def answer_similarity_metric(answer: str, golden_answer: str, embedder) -> float:
+    """Cosine similarity between the embeddings of the answer and the golden answer.
+
+    `embedder` is any LangChain `Embeddings` object, e.g. `rag.store.embeddings`.
+    """
+    va, vb = (np.asarray(v) for v in embedder.embed_documents([answer, golden_answer]))
+    similarity =  float(va @ vb / (np.linalg.norm(va) * np.linalg.norm(vb)))
+    return similarity
 
 
 

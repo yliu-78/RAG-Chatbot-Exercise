@@ -12,11 +12,11 @@ from statistics import mean
 os.environ.setdefault("DEEPEVAL_TELEMETRY_OPT_OUT", "YES")
 
 from deepeval.dataset import Golden
-from deepeval.metrics import ContextualRecallMetric, FaithfulnessMetric
+from deepeval.metrics import ContextualRecallMetric, ContextualPrecisionMetric, FaithfulnessMetric, AnswerRelevancyMetric
 from deepeval.test_case import LLMTestCase
 
 import src.config as config
-from eval.evaluation_functions import LangChainJudge, hit_at_k, reciprocal_rank
+from eval.evaluation_functions import LangChainJudge, hit_at_k, reciprocal_rank, answer_similarity_metric
 from src.llm_client import get_llm
 from src.rag import RAG
 
@@ -42,6 +42,8 @@ def main() -> None:
     judge = LangChainJudge(get_llm(), name=config.LLM_MODEL)
     recall = ContextualRecallMetric(model=judge, async_mode=False, include_reason=True)
     faithfulness = FaithfulnessMetric(model=judge, async_mode=False, include_reason=True)
+    answer_relevancy = AnswerRelevancyMetric(model=judge, async_mode=False, include_reason=True)
+    precision = ContextualPrecisionMetric(model=judge, async_mode=False, include_reason=True)
 
     rag = RAG()
     results = []
@@ -68,6 +70,9 @@ def main() -> None:
                     "answer": out["answer"],
                     "contextual_recall": run_llm_metric(recall, test_case),
                     "faithfulness": run_llm_metric(faithfulness, test_case),
+                    "precision": run_llm_metric(precision, test_case),
+                    "answer_relevancy": run_llm_metric(answer_relevancy, test_case),
+                    "answer_similarity_metric": answer_similarity_metric(out["answer"], golden.expected_output, rag.store.embeddings),
                     "hit_at_k": {k: hit_at_k(retrieved_ids, gold_ids, k) for k in K_VALUES},
                     "reciprocal_rank": reciprocal_rank(retrieved_ids, gold_ids),
                 }
