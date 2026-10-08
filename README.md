@@ -60,6 +60,7 @@ Notably, a key limitation is the fact taht the data is syntehtically generated u
     - Overreliance on black-box LLM-as-a-judge metrics. Although widely used, it is difficult to know exactly how asterisked LLMas a judge metrics are computed. As such, it is difficult to gauge exactly what is causing specific metrics to take the value they take. Furthermore, there is no benchmarking carried out - there is not indication for what is a "good" score vs a "bad" one. 
     - Unchecked synthetically generated goldens dataset
     - Limited checks for answer accuracy: There is no specific check for answer accuracy. This is a critical flaw as this is arguably the most important metric. Although a quick and dirty metric such as answer ssimilarity metric, this is not a replacement for such a metric. One method is to use a criteria-based LLM-as-a-judge with very clear instructions to pass/fail an asnwer based off criteria when comparing against the golden answer
+    - Same LLM model used as llm as judge and chatbot.
 - Current knowledge database (QdrantVectorStore) only supports one running app at a time. Usually this is fine, however, if you are running a streamlit app alongside evaluation, this can overlap and error. Would be good to explore other options to see what would be a suitable alternative. 
 
 
