@@ -22,7 +22,6 @@ Due to time constraints the easiest form of chunking was chosen: namely making e
 
 Alternative possible methods listed below: 
 - 'Labelled' chunks: take the header and/or the information from the "manifest.json" containing metadata. Append critical details to the start of each chunk. Chunk based off these constructed chunks. 
-- 
 
 Reranker: 
 Cross embedding reranker was used. This is the more computationally intensive rerankers avaialble. This was chosen due to ease of coding it up. This, paired with the large chunk size has negatively affected run speed - the large chunk requires more tokens and increases latency and the cross embedding reranker increases that even further. To combat this, only the top 4 chunks were returned as part of the RAG. 
@@ -33,10 +32,10 @@ It would be optimal to use a different reranker or even forgo this completely (d
 Evaluation Metrics and Approach: 
 The evaluation approach was to feed "golden" samples to the pipeline and evaluate the responses. The approach was to use an already pre-written package to speed up evaluation. As such, Deepeval was selected. Specifically the following metrics were used:
 - Contextual Recall*: how much of the golden answer can be found in the retrieved context (is the information needed to answer actually retrieved?)
-- Faithfullness*: the share of claims in the generated answer that are supported by the retrieved context (low values suggest hallucination)
-- Contextual Precision*: whether the relevant retrieved chunks are ranked above the irrelevant ones (is the useful context near the top?)
+- Faithfullness*: the share of claims in the generated answer that are supported by the retrieved context
+- Contextual Precision*: whether the relevant retrieved chunks are ranked above the irrelevant ones
 - Answer Relevancy*: how well the generated answer addresses the question asked
-- Answer Similarity: cosine similarity between the embeddings of the generated answer and the golden answer (1 = same meaning, in embedding space)
+- Answer Similarity: cosine similarity between the embeddings of the generated answer and the golden answer
 - Hit at K: 1 if at least one of the top K retrieved chunks comes from a gold call, otherwise 0 (averaged over questions)
 - Reciprocal Rank: 1 / rank of the first retrieved chunk from a gold call (1 = first, 0.5 = second, 0 = not retrieved)
 
@@ -61,6 +60,7 @@ Notably, a key limitation is the fact taht the data is syntehtically generated u
     - Overreliance on black-box LLM-as-a-judge metrics. Although widely used, it is difficult to know exactly how asterisked LLMas a judge metrics are computed. As such, it is difficult to gauge exactly what is causing specific metrics to take the value they take. Furthermore, there is no benchmarking carried out - there is not indication for what is a "good" score vs a "bad" one. 
     - Unchecked synthetically generated goldens dataset
     - Limited checks for answer accuracy: There is no specific check for answer accuracy. This is a critical flaw as this is arguably the most important metric. Although a quick and dirty metric such as answer ssimilarity metric, this is not a replacement for such a metric. One method is to use a criteria-based LLM-as-a-judge with very clear instructions to pass/fail an asnwer based off criteria when comparing against the golden answer
+- Current knowledge database (QdrantVectorStore) only supports one running app at a time. Usually this is fine, however, if you are running a streamlit app alongside evaluation, this can overlap and error. Would be good to explore other options to see what would be a suitable alternative. 
 
 
 ##With more time##
