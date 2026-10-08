@@ -5,7 +5,8 @@ The approach included:
 1) Generation of knowledge base using "QdrantVectorStore"
 2) Application of simple similarity search for the initial retrieval base function
 3) Usage of a cross encoder reranker to rerank retrieved results for better context retrieval
-4) Creation of a simple frontend to interact with the system 
+4) Creation of a simple frontend to interact with the system
+5) Creation of evaluation pipeline 
 
 ## Key decisions
 
