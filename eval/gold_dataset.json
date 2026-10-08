@@ -1,0 +1,120 @@
+[
+  {
+    "input": "What did DeltaWorks say about the works council, and how long could that process take?",
+    "expected_output": "DeltaWorks' IT governance lead, Anika Bose, said that if a workflow monitors employee activity in any way, for example measuring how long an individual takes to complete an approval, it is a co-determination matter that must go through the works council (Betriebsrat). She said three months is optimistic and six months is realistic if the use case is contested.",
+    "context": [
+      "[05:02] Anika Bose: The works council. The Betriebsrat. If a workflow monitors employee activity in any way — for example if it measures how long an individual takes to complete an approval — that is a co-determination matter and it must go through the works council.",
+      "[05:26] Anika Bose: It varies. Three months is optimistic. Six is realistic if the use case is contested."
+    ],
+    "additional_metadata": {
+      "reference_context_ids": [
+        "call-004_deltaworks_manufacturing.txt"
+      ]
+    }
+  },
+  {
+    "input": "Did DeltaWorks correct anything it said earlier about being cloud-first?",
+    "expected_output": "Yes. Martin Vogel said that cloud-first is corporate policy, but in practice two German plants are still prohibited from exposing production databases directly to SaaS vendors, so cloud-first is not the reality everywhere.",
+    "context": [
+      "[12:14] Martin Vogel: Can I correct something I said, actually. Earlier — and in the pre-call form, I think — I described us as cloud-first. That is corporate policy. In practice, two German plants are still prohibited from exposing production databases directly to SaaS vendors. So \"cloud-first\" is the policy and it is not the reality everywhere."
+    ],
+    "additional_metadata": {
+      "reference_context_ids": [
+        "call-004_deltaworks_manufacturing.txt"
+      ]
+    }
+  },
+  {
+    "input": "Did the Silverline Travel cold call produce a follow-up, and what was agreed?",
+    "expected_output": "Yes. Martine Duval, the Director of Customer Operations, asked Leo Grant to send something short rather than a deck, describing what OrbitFlow would actually look at. Leo proposed one page and a 30-minute conversation in the week of the sixth. Martine told him to send the page and copy Chloe, the executive assistant, who would put the meeting in the diary if the page was good.",
+    "context": [
+      "[05:04] Martine Duval: [laughs] She is quite firm. Alright — send me something. Not a deck. Something short that describes what you'd actually look at.",
+      "[05:15] Leo Grant: One page. And can I ask for thirty minutes in the week of the sixth? Not a demo. I'd want to understand the disruption process before I show you anything.",
+      "[05:28] Martine Duval: Send me the page and copy Chloe. If the page is good she'll put it in the diary."
+    ],
+    "additional_metadata": {
+      "reference_context_ids": [
+        "call-017_silverline_travel.txt"
+      ]
+    }
+  },
+  {
+    "input": "Why did customers who left decide to leave?",
+    "expected_output": "Two customers left in the churn post-mortems. Verity Payments chose Workato: its core-banking connector was better and its engineering-facing story (recipes as code, better CI) was stronger. Verity also concluded its team would never build workflows itself, and said it was not primarily a price decision. Oakhill Property over-bought: it was on the Growth plan at eighteen hundred a month for thirty users while only four people logged in, and it is moving back to Zapier at about a tenth of the cost, accepting the loss of approval steps and run history.",
+    "context": [
+      "[07:37] Sarah Lindqvist: Two things. Their connector for our core banking platform is genuinely better than yours. That one's just true.",
+      "[07:49] Sarah Lindqvist: And their engineering-facing story is stronger. Recipes as code, better CI story, our engineers had opinions about it and the opinions were positive.",
+      "[08:12] Kwame Boateng: Which is the honest conclusion. My team is never going to build workflows. That was my ambition and it was wrong, and rather than keep paying for the ambition I've accepted the reality.",
+      "[00:43] Hazel Wren: Right. We bought something we didn't need. That's the whole answer.",
+      "[01:12] Hazel Wren: We were on Growth, at eighteen hundred a month, for thirty users, when we had four people who ever logged in.",
+      "[02:14] Hazel Wren: [pause] No. We'll lose the approval steps and we'll lose the run history, which I'll genuinely miss. But nineteen thousand pounds is a member of staff for four months, and when I put it that way to my managing director, the conversation was quite short."
+    ],
+    "additional_metadata": {
+      "reference_context_ids": [
+        "call-014_verity_payments.txt",
+        "call-015_oakhill_property.txt"
+      ]
+    }
+  },
+  {
+    "input": "Which prospects said Salesforce is part of their technology stack or integration needs?",
+    "expected_output": "Five prospects: Acme Logistics (Salesforce is mandatory for the integration), DeltaWorks Manufacturing (Salesforce is part of its stack alongside SAP S/4HANA and ServiceNow), Ember Financial (Salesforce is required, along with Snowflake, Slack, Okta, and Jira), Inkwell Learning (Salesforce account status is one of the three data sources, though its human-maintained fields are unreliable), and Juniper Cloud Tools (Salesforce API limits are a constraint).",
+    "context": [
+      "[13:34] Maya Chen: On integrations — you'd said Salesforce is mandatory, Slack and Snowflake matter for phase one, Gainsight would be useful but isn't essential. Which one's the deal-breaker?",
+      "[09:46] Martin Vogel: SAP S/4HANA. Salesforce. ServiceNow. Microsoft Teams. And several on-premise SQL Server systems, which are the ones that will cause you difficulty.",
+      "[15:24] Noah Williams: Salesforce, Snowflake, Slack, Okta, Jira, and an internal event bus. Required: all of those, plus webhooks and a generic REST connector.",
+      "[01:23] Darren Wu: [laughs] I am. So — the proposal, as I understand it, is to combine Zendesk ticket patterns, Salesforce account status, and Snowflake product usage to flag accounts needing proactive intervention, and create structured follow-up tasks.",
+      "[16:41] Ava Sinclair: Salesforce API limits are the constraint. We've hit them before."
+    ],
+    "additional_metadata": {
+      "reference_context_ids": [
+        "call-001_acme_logistics.txt",
+        "call-004_deltaworks_manufacturing.txt",
+        "call-005_ember_financial.txt",
+        "call-009_inkwell_learning.txt",
+        "call-010_juniper_cloud_tools.txt"
+      ]
+    }
+  },
+  {
+    "input": "Which prospects were actively evaluating Tray.io, and how far along were they?",
+    "expected_output": "Ember Financial was running a bake-off between OrbitFlow and Tray.io, with a Tray proof of concept already running for about six weeks. Kestrel Robotics, on a cold call, was three weeks into evaluating Tray.io and said OrbitFlow's name had been crossed off its list.",
+    "context": [
+      "[00:13] Noah Williams: So you should know we're running this as a bake-off. You and Tray.io. We've had a Tray proof of concept running for about six weeks. This isn't a discovery call for us, we know what we want. This is us testing whether you can do it.",
+      "[00:15] Rafael Santos: We're three weeks into evaluating Tray.io. Your name came up on a list and got crossed off."
+    ],
+    "additional_metadata": {
+      "reference_context_ids": [
+        "call-005_ember_financial.txt",
+        "call-020_kestrel_robotics.txt"
+      ]
+    }
+  },
+  {
+    "input": "What did Acme Logistics say about the alternatives to OrbitFlow?",
+    "expected_output": "Acme Logistics already has Workato. Rachel Morgan said the real commercial question is whether Acme expands its existing Workato contract instead of adding another vendor, which she would have to win internally. Tom Alvarez said the honest comparison is Workato or simply improving what they already have, not doing nothing.",
+    "context": [
+      "[07:09] Tom Alvarez: We also have Workato. I don't want you to think we've got nothing.",
+      "[20:58] Rachel Morgan: The real commercial question is whether we expand the Workato contract we already have instead of adding another vendor. That's the conversation I'll have to win internally. I'd rather you knew that upfront than designed around an assumption.",
+      "[25:48] Tom Alvarez: And the honest comparison is Workato, or just improving what we already have. Not doing nothing."
+    ],
+    "additional_metadata": {
+      "reference_context_ids": [
+        "call-001_acme_logistics.txt"
+      ]
+    }
+  },
+  {
+    "input": "What pricing concern did Fable Media raise, and what alternative are they considering?",
+    "expected_output": "Fable Media's COO, Imogen Price, said she would need to justify what they get for twenty-one thousand that they don't get from Zapier for two thousand, and named price and complexity as the two main risks. They may decide that staying on Zapier with better process discipline is good enough for a company with no IT team.",
+    "context": [
+      "[09:18] Imogen Price: It's a hard limit. And more to the point, if I have to take it to him, he'll ask what we get for twenty-one thousand that we don't get from Zapier for two thousand, and I need a better answer than \"it's more robust.\"",
+      "[12:37] Imogen Price: Price and complexity are the two risks. And honestly, we may well decide that Zapier plus better process discipline is good enough for a company that doesn't have an IT team. That's a real possibility and I'd be doing my job badly if I didn't consider it."
+    ],
+    "additional_metadata": {
+      "reference_context_ids": [
+        "call-006_fable_media.txt"
+      ]
+    }
+  }
+]

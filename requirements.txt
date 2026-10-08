@@ -1,0 +1,29 @@
+# LangChain
+langchain
+langchain-classic
+langchain-community
+langchain-huggingface
+langchain-qdrant
+langchain-pymupdf4llm
+langchain-google-genai
+langchain-openai
+
+# Local vector DB, sparse (BM25) vectors, embedding + reranker models
+qdrant-client
+fastembed
+sentence-transformers
+
+# Observability
+langfuse
+python-json-logger
+prometheus-fastapi-instrumentator
+
+# API + UI
+fastapi
+uvicorn[standard]
+streamlit
+httpx
+
+# eval
+deepeval
+python-dotenv

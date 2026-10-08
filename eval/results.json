@@ -1,0 +1,232 @@
+[
+  {
+    "input": "What did DeltaWorks say about the works council, and how long could that process take?",
+    "gold_ids": [
+      "call-004_deltaworks_manufacturing.txt"
+    ],
+    "retrieved_ids": [
+      "call-004_deltaworks_manufacturing.txt",
+      "call-004_deltaworks_manufacturing.txt",
+      "call-004_deltaworks_manufacturing.txt",
+      "call-004_deltaworks_manufacturing.txt"
+    ],
+    "answer": "**Answer:** The Works Council (Betriebsrat) at DeltaWorks is involved in the decision process only if a use case requires it, specifically if a workflow monitors employee activity in any way, such as measuring how long an individual takes to complete an approval. This is considered a co-determination matter. The process for the Works Council can vary, with three months being optimistic and six months being realistic if the use case is contested.\n\n**Evidence:**\n*   [call-004_deltaworks_manufacturing.txt @ 05:02] Anika Bose: \"The works council. The Betriebsrat. If a workflow monitors employee activity in any way — for example if it measures how long an individual takes to complete an approval — that is a co-determination matter and it must go through the works council.\"\n*   [call-004_deltaworks_manufacturing.txt @ 05:26] Anika Bose: \"It varies. Three months is optimistic. Six is realistic if the use case is contested.\"\n*   [call-004_deltaworks_manufacturing.txt @ 05:36] Anika Bose: \"Six months. This is why I want it discussed now and not in October.\"\n*   [call-004_deltaworks_manufacturing.txt @ 32:00] Martin Vogel: \"Enterprise applications sponsors, which is me. Then the architecture board, information security, the works council for some workflow monitoring use cases, procurement, and regional IT.\"\n*   [call-004_deltaworks_manufacturing.txt @ 32:24] Martin Vogel: \"The works council only if the use case requires it, which is why Anika wanted it discussed today.\"\n\n**Confidence and caveats:** The evidence directly and clearly answers both parts of the question regarding the Works Council's role and the potential duration of its process.",
+    "contextual_recall": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the expected output is perfectly supported by the nodes in retrieval context, demonstrating excellent recall!"
+    },
+    "faithfulness": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context! Great job!"
+    },
+    "hit_at_k": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "reciprocal_rank": 1.0
+  },
+  {
+    "input": "Did DeltaWorks correct anything it said earlier about being cloud-first?",
+    "gold_ids": [
+      "call-004_deltaworks_manufacturing.txt"
+    ],
+    "retrieved_ids": [
+      "call-004_deltaworks_manufacturing.txt",
+      "call-004_deltaworks_manufacturing.txt",
+      "call-004_deltaworks_manufacturing.txt",
+      "call-004_deltaworks_manufacturing.txt"
+    ],
+    "answer": "**Answer:** Yes, Martin Vogel corrected an earlier statement about DeltaWorks being \"cloud-first.\" He clarified that while \"cloud-first\" is corporate policy, it is not the reality everywhere, as two German plants are prohibited from exposing production databases directly to SaaS vendors.\n\n**Evidence:**\n*   [call-004_deltaworks_manufacturing.txt @ 12:14] Martin Vogel: \"Can I correct something I said, actually. Earlier — and in the pre-call form, I think — I described us as cloud-first. That is corporate policy. In practice, two German plants are still prohibited from exposing production databases directly to SaaS vendors. So 'cloud-first' is the policy and it is not the reality everywhere.\"\n\n**Confidence and caveats:** The evidence directly and clearly supports the answer.",
+    "contextual_recall": {
+      "score": 0.5,
+      "reason": "The score is 0.50 because sentence 2 of the expected output is directly supported by node 1 in retrieval context, which states that Martin Vogel described cloud-first as corporate policy but in practice two German plants are still prohibited from exposing production databases directly to SaaS vendors. However, sentence 1, \"Yes.\", is an affirmation and cannot be attributed to any node in retrieval context."
+    },
+    "faithfulness": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context! Great job!"
+    },
+    "hit_at_k": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "reciprocal_rank": 1.0
+  },
+  {
+    "input": "Did the Silverline Travel cold call produce a follow-up, and what was agreed?",
+    "gold_ids": [
+      "call-017_silverline_travel.txt"
+    ],
+    "retrieved_ids": [
+      "call-017_silverline_travel.txt",
+      "call-001_acme_logistics.txt",
+      "call-017_silverline_travel.txt",
+      "call-020_kestrel_robotics.txt"
+    ],
+    "answer": "**Answer:** The provided transcript excerpt for the Silverline Travel cold call does not contain information about whether a follow-up was produced or what was agreed. The excerpt ends with Chloe Barnes confirming that Martine Duval is the correct contact but is very busy [call-017_silverline_travel.txt @ 00:50].\n\n**Evidence:**\n* [call-017_silverline_travel.txt @ 00:38] Leo Grant: \"Is Martine the right person for operational process problems, or is that somebody else?\"\n* [call-017_silverline_travel.txt @ 00:50] Chloe Barnes: \"She's the right person. She's also very busy this week — we've got a supplier conference.\"\n\n**Confidence and caveats:** The provided excerpt for `call-017_silverline_travel.txt` is incomplete, covering only the first 50 seconds of a 5-minute call. Therefore, it is highly likely that the information about a follow-up or agreement would occur later in the call, which is not available in the given context.",
+    "contextual_recall": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the expected output is perfectly supported by the information found in the nodes in retrieval context. Excellent work!"
+    },
+    "faithfulness": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context! Great job!"
+    },
+    "hit_at_k": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "reciprocal_rank": 1.0
+  },
+  {
+    "input": "Why did customers who left decide to leave?",
+    "gold_ids": [
+      "call-014_verity_payments.txt",
+      "call-015_oakhill_property.txt"
+    ],
+    "retrieved_ids": [
+      "call-014_verity_payments.txt",
+      "call-014_verity_payments.txt",
+      "call-012_pinewood_insurance.txt",
+      "call-014_verity_payments.txt"
+    ],
+    "answer": "**Answer:** Customers decided to leave for several reasons, including product design issues, poor customer-product fit, and onboarding failures.\n\n**Evidence:**\n*   [call-014_verity_payments.txt @ 05:41] Kwame Boateng: \"Then you've designed a product that fails by default for people like me.\" (referring to a paid professional services engagement that is necessary for the product to succeed but not offered or known until too late).\n*   [call-014_verity_payments.txt @ 13:59] Kwame Boateng: \"I don't think you should have kept us. I think we were the wrong customer for the product, or the product was sold to us for the wrong reason.\"\n*   [call-014_verity_payments.txt @ 14:13] Kwame Boateng: \"Both, slightly.\" (clarifying that both being the wrong customer and the product being sold for the wrong reason contributed).\n*   [call-012_pinewood_insurance.txt @ 19:37] Ruth Adeyemi: \"A product that only one person in an organisation can use is a product with an onboarding failure, and that's ours.\" (referring to Nadia Rahman's earlier point about implementation issues after one person owned it and then left).\n*   [call-014_verity_payments.txt @ 11:23] Sarah Lindqvist: \"It's not why we left. But it contributed to a general feeling that we were a small account.\" (referring to inconsistent support).\n\n**Confidence and caveats:** The evidence directly supports the stated reasons for leaving or considering leaving. Sarah Lindqvist explicitly states that inconsistent support was not *why* they left, but it contributed to a feeling of being a small account.",
+    "contextual_recall": {
+      "score": 0.25,
+      "reason": "The score is 0.25 because while sentence 1 of the expected output, concerning two customer churns, is supported by node 1 and node 4 in retrieval context, the majority of the remaining information is not present. Specifically, sentences 2 and 3, which describe Verity Payments' decision to choose Workato and their team's conclusions, are entirely absent. Furthermore, most of sentence 4, detailing Oakhill Property's over-buying, plan specifics, and move to Zapier, is not found, despite 'run history' being mentioned in node 1 and node 4."
+    },
+    "faithfulness": {
+      "score": 0.625,
+      "reason": "The score is 0.62 because the actual output incorrectly attributes a statement about a product designed to fail to Kwame Boateng, and introduces Ruth Adeyemi as making a statement and referring to Nadia Rahman's point, even though Ruth Adeyemi is not mentioned in the retrieval context."
+    },
+    "hit_at_k": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "reciprocal_rank": 1.0
+  },
+  {
+    "input": "Which prospects said Salesforce is part of their technology stack or integration needs?",
+    "gold_ids": [
+      "call-001_acme_logistics.txt",
+      "call-004_deltaworks_manufacturing.txt",
+      "call-005_ember_financial.txt",
+      "call-009_inkwell_learning.txt",
+      "call-010_juniper_cloud_tools.txt"
+    ],
+    "retrieved_ids": [
+      "call-001_acme_logistics.txt",
+      "call-005_ember_financial.txt",
+      "call-010_juniper_cloud_tools.txt",
+      "call-001_acme_logistics.txt"
+    ],
+    "answer": "**Answer:** Three prospects mentioned Salesforce as part of their technology stack or integration needs: Acme Logistics, Ember Financial, and Juniper Cloud Tools.\n\n**Evidence:**\n*   [call-001_acme_logistics.txt @ 06:31] Maya Chen: \"Let me play the stack back to make sure I've got it. Salesforce, Slack, Snowflake, Gainsight, Google Sheets.\"\n*   [call-001_acme_logistics.txt @ 13:34] Maya Chen: \"On integrations — you'd said Salesforce is mandatory...\"\n*   [call-005_ember_financial.txt @ 15:24] Noah Williams: \"Salesforce, Snowflake, Slack, Okta, Jira, and an internal event bus. Required: all of those, plus webhooks and a generic REST connector.\"\n*   [call-010_juniper_cloud_tools.txt @ 15:13] Nina Patel: \"Just confirm what I've got. Salesforce, Segment, PostgreSQL, Slack, Linear, internal services, AWS.\"\n*   [call-010_juniper_cloud_tools.txt @ 15:23] Marcus Chen: \"That's it.\"\n\n**Confidence and caveats:** The evidence directly supports that these three prospects mentioned Salesforce. The answer is based solely on the provided excerpts.",
+    "contextual_recall": {
+      "score": 0.0,
+      "reason": "The score is 0.00 because the entire expected output (sentence 1) introduces five specific prospect names (Acme Logistics, DeltaWorks Manufacturing, Ember Financial, Inkwell Learning, Juniper Cloud Tools) that are not mentioned in the nodes in retrieval context. Additionally, specific details such as SAP S/4HANA and ServiceNow in DeltaWorks' stack, Salesforce account status as one of three data sources for Inkwell Learning, and Salesforce API limits for Juniper Cloud Tools are not found. While \"Salesforce is mandatory\" is mentioned in node 1 and \"Salesforce, Snowflake, Slack, Okta, Jira\" as required are mentioned in node 2, these specific details are not tied to the named prospects or the other unverified claims in sentence 1."
+    },
+    "faithfulness": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context! Great job!"
+    },
+    "hit_at_k": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "reciprocal_rank": 1.0
+  },
+  {
+    "input": "Which prospects were actively evaluating Tray.io, and how far along were they?",
+    "gold_ids": [
+      "call-005_ember_financial.txt",
+      "call-020_kestrel_robotics.txt"
+    ],
+    "retrieved_ids": [
+      "call-020_kestrel_robotics.txt",
+      "call-005_ember_financial.txt",
+      "call-020_kestrel_robotics.txt",
+      "call-020_kestrel_robotics.txt"
+    ],
+    "answer": "**Answer:** Two prospects were actively evaluating Tray.io:\n*   Kestrel Robotics was three weeks into their evaluation of Tray.io.\n*   Ember Financial had a Tray.io proof of concept (PoC) running for about six weeks.\n\n**Evidence:**\n*   [call-020_kestrel_robotics.txt @ 00:15] Rafael Santos: \"We're three weeks into evaluating Tray.io.\"\n*   [call-020_kestrel_robotics.txt @ 05:33] Leo Grant: \"Run it against Tray — I mean that, run it against Tray, you're three weeks in and it costs you nothing.\"\n*   [call-005_ember_financial.txt @ 00:17] Noah Williams: \"We've had a Tray proof of concept running for about six weeks.\"\n\n**Confidence and caveats:** The evidence directly states the names of the prospects and the duration of their evaluations with Tray.io.",
+    "contextual_recall": {
+      "score": 0.5,
+      "reason": "The score is 0.50 because the second sentence of the expected output is well-supported by the first node in retrieval context, detailing Kestrel Robotics' evaluation of Tray.io and OrbitFlow. However, the first sentence, while mentioning a bake-off and a six-week Tray proof of concept from the second node, lacks the specific company name 'Ember Financial' in the retrieval context."
+    },
+    "faithfulness": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context! Great job!"
+    },
+    "hit_at_k": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "reciprocal_rank": 1.0
+  },
+  {
+    "input": "What did Acme Logistics say about the alternatives to OrbitFlow?",
+    "gold_ids": [
+      "call-001_acme_logistics.txt"
+    ],
+    "retrieved_ids": [
+      "call-001_acme_logistics.txt",
+      "call-002_brightpath_health.txt",
+      "call-016_quarry_ridge_foods.txt",
+      "call-001_acme_logistics.txt"
+    ],
+    "answer": "**Answer:** Acme Logistics stated that the honest comparison to OrbitFlow is Workato, or simply improving their existing processes.\n\n**Evidence:**\n*   [call-001_acme_logistics.txt @ 25:48] Tom Alvarez: \"And the honest comparison is Workato, or just improving what we already have. Not doing nothing.\"\n\n**Confidence and caveats:** The evidence directly and clearly answers the question.",
+    "contextual_recall": {
+      "score": 0.3333333333333333,
+      "reason": "The score is 0.33 because only sentence 3 of the expected output is supported by the retrieval context, specifically from the 4th node. Sentences 1 and 2 are not explicitly supported by any node in the retrieval context."
+    },
+    "faithfulness": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context! Great job!"
+    },
+    "hit_at_k": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "reciprocal_rank": 1.0
+  },
+  {
+    "input": "What pricing concern did Fable Media raise, and what alternative are they considering?",
+    "gold_ids": [
+      "call-006_fable_media.txt"
+    ],
+    "retrieved_ids": [
+      "call-006_fable_media.txt",
+      "call-006_fable_media.txt",
+      "call-012_pinewood_insurance.txt",
+      "call-003_cedar_finch.txt"
+    ],
+    "answer": "**Answer:** The provided excerpts do not contain information about Fable Media raising any pricing concerns regarding OrbitFlow or considering any specific alternatives. Imogen Price did express a concern about the cost of their current manual process, stating that \"someone spending two hours a week being a very expensive photocopier\" is annoying [call-006_fable_media.txt @ 01:44].\n\n**Evidence:**\n* [call-006_fable_media.txt @ 01:44] Imogen Price: \"The copying is the bit that annoys me most because it's not even hard work, it's just someone spending two hours a week being a very expensive photocopier.\"\n\n**Confidence and caveats:** The evidence clearly shows Imogen Price's concern about the cost of their current manual process. However, the excerpts do not contain any discussion about OrbitFlow's pricing or any alternative solutions Fable Media is considering.",
+    "contextual_recall": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the expected output is perfectly aligned with the information found in the nodes in retrieval context. For example, sentence 1 is clearly supported by the 1st node, and sentence 2 is well-reflected in the 4th node."
+    },
+    "faithfulness": {
+      "score": 1.0,
+      "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context! Great job!"
+    },
+    "hit_at_k": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "reciprocal_rank": 1.0
+  }
+]
