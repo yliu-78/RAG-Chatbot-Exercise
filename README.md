@@ -13,21 +13,17 @@ Knowledge database:
 This QdrantVectorStore was used due to being relatively lightweight as well as being able to persist across sessions. Originally in-memory database was considered, however, it was deemed too lightweight as the process of creating the store must be repeated each time the RAG system is run.
 
 Chunking: 
-Due to time constraints the easiest form of chunking was chosen: namely making each txt file its separate chunk. This made sense as the model used is able to keep the entire file in context. However, this is far from optimal. Noted drawbacks include:
-- Substantially increased runtime for both creation of vector store
-- Substantially increased runtime for queries on RAG database due to large chunk being entered into conext
-- Possible decrease in accuracy of answers due to overloading the context window 
-- Difficulty validating relevance of returned context - refereences returned are for an entire text file so metrics assessing relevance can only check if relevant information is within that particular text file
+Due to time constraints the a default form of chunking was chosen: namely a chunk size of 1000 and overlap of 150 ccharacters was chosen. This is a small to medium chunk size. This has a couple of advantages, namely: easy and fast to build and fits into the embedder. However, it does sacrifice length of context for ease of use. As such, may result in lower accuracy on questions. 
 
 
 Alternative possible methods listed below: 
 - 'Labelled' chunks: take the header and/or the information from the "manifest.json" containing metadata. Append critical details to the start of each chunk. Chunk based off these constructed chunks. 
+- Larger chunk sizes and overlap
 
 Reranker: 
-Cross embedding reranker was used. This is the more computationally intensive rerankers avaialble. This was chosen due to ease of coding it up. This, paired with the large chunk size has negatively affected run speed - the large chunk requires more tokens and increases latency and the cross embedding reranker increases that even further. To combat this, only the top 4 chunks were returned as part of the RAG. 
+Cross embedding reranker was used. This is the more computationally intensive rerankers avaialble. This was chosen due to ease of coding it up. This has negatively affected run speed. To combat this, only the top 4 chunks were returned as part of the RAG. 
 
-It would be optimal to use a different reranker or even forgo this completely (depending on performance on evaluation metrics). 
-
+It would be optimal to use a different reranker or even forgo this completely (depending on performance on evaluation metrics) in order to increase the number of chunks returned as part of the retrieval. 
 
 Evaluation Metrics and Approach: 
 The evaluation approach was to feed "golden" samples to the pipeline and evaluate the responses. The approach was to use an already pre-written package to speed up evaluation. As such, Deepeval was selected. Specifically the following metrics were used:
@@ -53,8 +49,8 @@ Notably, a key limitation is the fact taht the data is syntehtically generated u
 
 
 ## Known Limitations
-- Reranker alongside large chunk size increases runtime substantially as well as forcing the limitation of top results retrieved to only 4 
-- Simple chunking strategy is not optimal and likely dereases accuracy whilst increasing difficulty of evaluation
+- Reranker increases runtime substantially as well as forcing the limitation of top results retrieved to only 4. This was originally done due to time constraints - once the code was written and run, didn't have much time to change it over, especially after evaluation was already performed.  
+- Simple chunking strategy is not optimal and may decrease accuracy. 
 - Lack of proper pydantic output parsing. Simple stringoutputparser has been used. Should ideally want an enforced JSON basemodel with fields for the string answer plus any reference strings and reference files/chunks used
 - Underdeveloped testing approach, specifically: 
     - Overreliance on black-box LLM-as-a-judge metrics. Although widely used, it is difficult to know exactly how asterisked LLMas a judge metrics are computed. As such, it is difficult to gauge exactly what is causing specific metrics to take the value they take. Furthermore, there is no benchmarking carried out - there is not indication for what is a "good" score vs a "bad" one. 
@@ -65,10 +61,11 @@ Notably, a key limitation is the fact taht the data is syntehtically generated u
 
 
 ## With more time
-- Firstly: properly develop the testing pipeline so thatit can give a clear and concrete view of exactly what the limitations and strengths of the system are. 
-- Change chunking strategy to something more sophisticated
+- Firstly: properly develop the testing pipeline so that it can give a clear and concrete view of exactly what the limitations and strengths of the system are. 
+- Change chunking strategy to something more sophisticated. 
+- Experiment with chunking parameters to see best perofrmance. 
 - Experiment with different rerankers. What is required will likely be driven by the change in chunking strategy
-- Implement logging and monitoring
+- Implement logging
 
 
 ## Setup and Run Instructions
@@ -91,7 +88,7 @@ Optional: `LLM_MODEL` (default `gemini-2.5-flash`). Langfuse keys (`LANGFUSE_PUB
 
 3) Build the vector store from the call transcripts in `data/calls` (writes to `qdrant_db/`; rerunning rebuilds it from scratch):
 ```powershell
-python -m scripts.test_rag
+python -m scripts.ingest
 ```
 
 4) Launch the chatbot:

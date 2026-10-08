@@ -46,7 +46,7 @@ st.caption(
 )
 
 if not Path(config.QDRANT_PATH).exists():
-    st.error("No vector index found. Build it first by running `python -m scripts.test_rag` from the project root.")
+    st.error("No vector index found. Build it first by running `python -m scripts.ingest` from the project root.")
     st.stop()
 
 if "messages" not in st.session_state:
