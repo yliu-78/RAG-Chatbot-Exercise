@@ -17,7 +17,6 @@ def ingest():
     documents = splitter.split_documents(documents)
     print(f"{len(documents)} chunks")
 
-    # %% Ingest into the vector store
     build_store(documents)
 
 
