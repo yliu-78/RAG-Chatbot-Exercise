@@ -1,5 +1,5 @@
 
-##Approach##
+## Approach
 
 The approach included: 
 1) Generation of knowledge base using "QdrantVectorStore"
@@ -7,7 +7,7 @@ The approach included:
 3) Usage of a cross encoder reranker to rerank retrieved results for better context retrieval
 4) Creation of a simple frontend to interact with the system 
 
-##Key decisions##
+## Key decisions
 
 Knowledge database: 
 This QdrantVectorStore was used due to being relatively lightweight as well as being able to persist across sessions. Originally in-memory database was considered, however, it was deemed too lightweight as the process of creating the store must be repeated each time the RAG system is run.
@@ -47,12 +47,12 @@ A quick look at the results json indicate that retrieval seems to work relativel
 
 Notably, a key limitation is the fact taht the data is syntehtically generated using LLMs. This data has also not been checked over adequately by myself due to time limitations, leading to risk that the evaluation set may be sub-optimal. 
 
-##Assumptions##
+## Assumptions
 - Goldens are constructed using copilot. This is potentially inaccurate. I have not been able to verify each fo these goldens due to time constraints. The small number I did test did not have any issues. The implication of this is that the evaluation is inaccurate. Any changes and iterations may also be evaluated inaccurately. This is a fairly critical feature to overcome first as performance on these tests should drive any future changes in the application.
 - I have assumed no tables and non-textual data are within the calls dataset. Although in a quick scan of the available data, I did not see any non-textual data (eg: tables or images), I have not had time to verify this. If there were any non-text data, this would imply that generation of the knowlege base and vector store may be inaccurate as the non-text data may not be properly represented with just embeddings. 
 
 
-##Known Limitations##
+## Known Limitations
 - Reranker alongside large chunk size increases runtime substantially as well as forcing the limitation of top results retrieved to only 4 
 - Simple chunking strategy is not optimal and likely dereases accuracy whilst increasing difficulty of evaluation
 - Lack of proper pydantic output parsing. Simple stringoutputparser has been used. Should ideally want an enforced JSON basemodel with fields for the string answer plus any reference strings and reference files/chunks used
@@ -64,14 +64,14 @@ Notably, a key limitation is the fact taht the data is syntehtically generated u
 - Current knowledge database (QdrantVectorStore) only supports one running app at a time. Usually this is fine, however, if you are running a streamlit app alongside evaluation, this can overlap and error. Would be good to explore other options to see what would be a suitable alternative. 
 
 
-##With more time##
+## With more time
 - Firstly: properly develop the testing pipeline so thatit can give a clear and concrete view of exactly what the limitations and strengths of the system are. 
 - Change chunking strategy to something more sophisticated
 - Experiment with different rerankers. What is required will likely be driven by the change in chunking strategy
 - Implement logging and monitoring
 
 
-##Setup and Run Instructions##
+## Setup and Run Instructions
 
 Developed on Windows (PowerShell) with Python 3.11. Commands are run from the project root.
 
